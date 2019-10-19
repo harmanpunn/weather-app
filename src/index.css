@@ -11,3 +11,378 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.c-container {
+  width: 100%;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.c-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.c-title__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.c-title__text {
+  font-size: 1.7rem;
+  position: relative;
+  top: 1px;
+  font-weight: 500;
+}
+
+.c-title__subtext {
+  align-self: center;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #999;
+}
+
+.c-weather {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.2s;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.c-weather__city {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.c-weather__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.c-weather__details__temp {
+  font-weight: 300;
+  font-size: 5.5rem;
+  color: #2b7a78;
+}
+
+.c-weather__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-weather__text__phrase {
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  line-height: 1;
+  color: #3aafa9;
+}
+
+.c-weather__text__minmax {
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+
+.c-forecast {
+  padding: 2rem;
+}
+
+.c-forecast > *:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.c-forecast__weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.c-forecast__weather--date {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.c-forecast__weather--details {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.c-forecast__weather--details--icon {
+  width: 5.5rem;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.c-forecast__weather--details--text {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+.c-forecast__weather--details--text--phrase {
+  color: #3aafa9;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.c-forecast__weather--details--text--minmax {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.c-forecast__weather--details--temp {
+  color: #2b7a78;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.c-close__popup {
+  position: absolute;
+  right: 11.5rem;
+}
+
+.c-close__popup--icon {
+  fill: #ff5959;
+  width: 2rem;
+  transform: rotate(45deg);
+  height: 2rem;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+}
+
+.c-cities {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c-cities > * {
+  margin-bottom: 3rem;
+}
+
+.c-city__weather {
+  cursor: pointer;
+}
+
+.c-cities__add {
+  align-self: center;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.c-cities__add--icon {
+  fill: #999;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.5;
+}
+
+.c-cities__remove--all {
+  align-self: center;
+  background-color: #ff5959;
+  padding: 6px 12px;
+  color: #ffffff;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: all 0.2s;
+  width: auto;
+  height: auto;
+}
+
+.error__message {
+  color: #ff5959;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sk-folding-cube {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(158, 152, 152);
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+  animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+  transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+  transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+  transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%,
+  10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-foldCubeAngle {
+  0%,
+  10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
