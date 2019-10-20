@@ -40,7 +40,7 @@ class Forecast extends Component {
     return (
       <React.Fragment>
         <div className="c-container">
-          <div className="c-title">
+          <div className="c-title animated fadeIn">
             <img src={"/icons/location.svg"} className="c-title__icon" />
             <h1 className="c-title__text">
               {location.name}, {location.country}

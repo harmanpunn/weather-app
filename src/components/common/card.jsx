@@ -3,7 +3,7 @@ import React from "react";
 const Card = ({ location, weather, onClick }) => {
   return (
     <React.Fragment>
-      <div className="c-weather animated fadeIn" onClick={onClick}>
+      <div className="c-weather animated fadeIn view" onClick={onClick}>
         <h2 className="c-weather__city">
           {location.name}, {location.country}
         </h2>

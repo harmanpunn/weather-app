@@ -1,4 +1,5 @@
 body {
+  width: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -200,6 +201,11 @@ code {
   animation-fill-mode: both;
 }
 
+.view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.05);
+}
+
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -241,6 +247,10 @@ code {
 }
 
 .c-cities__remove--all {
+  margin-bottom: 4rem;
+}
+
+.remove {
   align-self: center;
   background-color: #ff5959;
   padding: 6px 12px;
@@ -251,6 +261,28 @@ code {
   transition: all 0.2s;
   width: auto;
   height: auto;
+  margin-bottom: 1rem;
+}
+
+.remove:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.05);
+}
+
+.c-cities__addCity {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  z-index: 1500;
+  width: 0;
+  height: 100%;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.c-cities__addCity.open {
+  opacity: 1;
+  width: 100%;
 }
 
 .error__message {
@@ -259,6 +291,22 @@ code {
   font-weight: 500;
   padding: 2rem;
   text-align: center;
+}
+
+.c-modal {
+  padding: 3rem 2rem;
+  position: absolute;
+  width: 65rem;
+  height: 100vh;
+  top: 0;
+  background-color: #fff;
+  transition: all 0.2s;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+}
+
+body.modal-open {
+  height: 100vh;
+  position: fixed;
 }
 
 * {

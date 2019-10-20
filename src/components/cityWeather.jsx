@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getCityWeather } from "../services/weatherService";
 import MiniCard from "./common/miniCard";
+import LoadingSpinner from "./common/loadingSpinner";
 
 class CityWeather extends Component {
   state = {
@@ -15,7 +16,7 @@ class CityWeather extends Component {
   render() {
     const { weatherData, loaded } = this.state;
 
-    if (!loaded) return <h1>issue</h1>;
+    if (!loaded) return <LoadingSpinner />;
 
     const location = {
       name: weatherData.name,

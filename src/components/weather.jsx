@@ -3,10 +3,12 @@ import { getWeather } from "../services/weatherService";
 import Card from "./common/card";
 import LoadingSpinner from "./common/loadingSpinner";
 import CityWeather from "./cityWeather";
+import AddCityForm from "./addCityForm";
 
 class Weather extends Component {
   state = {
-    loaded: false
+    loaded: false,
+    showModal: false
   };
 
   async componentDidMount() {
@@ -19,6 +21,15 @@ class Weather extends Component {
     this.props.history.push("/forecast", { id: id });
   };
 
+  handleShowModal = () => {
+    this.setState({ showModal: true });
+    window.scrollTo(0, 0);
+  };
+
+  handleToggleModal = () => {
+    this.setState({ showModal: !this.state.showModal });
+  };
+
   handleRemoveLocations = () => {
     localStorage.clear();
     window.location = "/";
@@ -26,9 +37,8 @@ class Weather extends Component {
 
   render() {
     //window.wData = this.state.weatherData;
-    const { weatherData, loaded } = this.state;
+    const { weatherData, loaded, showModal, showWeather } = this.state;
     const { savedLocations } = this.props;
-
     if (!loaded) return null;
 
     const location = {
@@ -86,7 +96,7 @@ class Weather extends Component {
                     />
                   ))}
                   <button
-                    className="c-cities__remove--all animated fadeIn"
+                    className="c-cities__remove--all remove animated fadeIn"
                     onClick={this.handleRemoveLocations}
                   >
                     Remove all locations
@@ -94,13 +104,20 @@ class Weather extends Component {
                 </React.Fragment>
               )}
             </div>
-            <button className="c-cities__add animated fadeIn">
+            <button
+              className="c-cities__add animated fadeIn"
+              onClick={this.handleShowModal}
+            >
               <svg className="c-cities__add--icon">
                 <use href="./icons/symbol-defs.svg#icon-plus"></use>
               </svg>
             </button>
           </div>
         </div>
+
+        {showModal ? (
+          <AddCityForm show={showModal} onClose={this.handleToggleModal} />
+        ) : null}
       </React.Fragment>
     );
   }

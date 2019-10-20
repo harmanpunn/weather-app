@@ -8,7 +8,7 @@ const MiniCard = ({ data, isForecast, location }) => {
 
   return (
     <React.Fragment>
-      <div className="c-forecast__weather">
+      <div className="c-forecast__weather animated fadeIn view">
         <div className="c-forecast__weather--date">
           {isForecast ? date : `${location.name}, ${location.country}`}
         </div>
