@@ -10,7 +10,7 @@ class App extends Component {
   state = {};
 
   componentDidMount() {
-    const savedLocations = JSON.parse(getSavedLocations());
+    const savedLocations = getSavedLocations();
     this.setState({ savedLocations });
   }
 

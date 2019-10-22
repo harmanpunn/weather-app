@@ -40,24 +40,26 @@ class Forecast extends Component {
     return (
       <React.Fragment>
         <div className="c-container">
-          <div className="c-title animated fadeIn">
-            <img src={"/icons/location.svg"} className="c-title__icon" />
-            <h1 className="c-title__text">
-              {location.name}, {location.country}
-            </h1>
+          <div className="forecast">
             <button className="c-close__popup" onClick={this.handleCloseButton}>
               <svg className="c-close__popup--icon">
                 <use href="./icons/symbol-defs.svg#icon-plus"></use>
               </svg>
             </button>
-          </div>
+            <div className="c-title animated fadeIn">
+              <img src={"/icons/location.svg"} className="c-title__icon" />
+              <h1 className="c-title__text">
+                {location.name}, {location.country}
+              </h1>
+            </div>
 
-          <div className="c-title__subtext">Forecast for next 5 days</div>
+            <div className="c-title__subtext">Forecast for next 5 days</div>
 
-          <div className="c-forecast">
-            {weather.map(item => (
-              <MiniCard key={item.date} data={item} isForecast={true} />
-            ))}
+            <div className="c-forecast">
+              {weather.map(item => (
+                <MiniCard key={item.date} data={item} isForecast={true} />
+              ))}
+            </div>
           </div>
         </div>
       </React.Fragment>

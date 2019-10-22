@@ -4,6 +4,7 @@ import { apiUrl, apiKey } from "../config.json";
 
 const currentWeatherUrl = `${apiUrl}/weather?appid=${apiKey}`;
 const forecastUrl = `${apiUrl}/forecast?appid=${apiKey}`;
+const findCityUrl = `${apiUrl}/find?appid=${apiKey}`;
 
 // To get weather for current location
 export async function getWeather() {
@@ -30,4 +31,8 @@ export async function getForecast(id) {
 
 export async function getCityWeather(id) {
   return http.get(`${currentWeatherUrl}&id=${id}&units=metric`);
+}
+
+export async function getCity(name) {
+  return http.get(`${findCityUrl}&units=metric&q=${name}`);
 }

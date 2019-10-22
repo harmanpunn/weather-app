@@ -31,12 +31,21 @@ export async function getCurrentLocation() {
 
 export function getSavedLocations() {
   if (!localStorage.hasOwnProperty("savedLocations")) {
-    const locIds = [];
-    locIds.push(1267911);
-    locIds.push(1259229);
-    localStorage.setItem("savedLocations", JSON.stringify(locIds));
     return null;
   } else {
-    return localStorage.getItem("savedLocations");
+    return JSON.parse(localStorage.getItem("savedLocations"));
   }
+}
+
+export function saveLocation(id) {
+  let locIds = [];
+  if (!localStorage.hasOwnProperty("savedLocations")) {
+    locIds.push(id);
+  } else {
+    locIds = getSavedLocations();
+    if (!locIds.includes(id)) {
+      locIds.push(id);
+    }
+  }
+  localStorage.setItem("savedLocations", JSON.stringify(locIds));
 }

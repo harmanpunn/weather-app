@@ -16,7 +16,7 @@ class CityWeather extends Component {
   render() {
     const { weatherData, loaded } = this.state;
 
-    if (!loaded) return <LoadingSpinner />;
+    if (!loaded) return null;
 
     const location = {
       name: weatherData.name,

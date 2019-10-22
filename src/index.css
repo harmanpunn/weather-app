@@ -184,7 +184,10 @@ code {
 
 .c-close__popup {
   position: absolute;
-  right: 11.5rem;
+  top: 0;
+  right: 0;
+  align-self: flex-end;
+  display: flex;
 }
 
 .c-close__popup--icon {
@@ -269,13 +272,12 @@ code {
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.05);
 }
 
-.c-cities__addCity {
+.c-cities__addCity,
+.forecast {
   position: relative;
   display: flex;
   flex-direction: column;
-  opacity: 0;
   z-index: 1500;
-  width: 0;
   height: 100%;
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -302,11 +304,48 @@ code {
   background-color: #fff;
   transition: all 0.2s;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
 }
 
 body.modal-open {
   height: 100vh;
   position: fixed;
+}
+
+.c-search__city {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.c-search__form {
+  background: transparent;
+  color: #2b7a78;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.c-search__results {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.c-search__results > * {
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  text-align: center;
+}
+
+.form-control {
+  color: #2b7a78;
+  border-bottom: 1px solid #2b7a78;
+  width: 75%;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 * {
@@ -320,11 +359,21 @@ body.modal-open {
   box-sizing: inherit;
 }
 
-button {
+button,
+input {
   outline: none;
   border: none;
   cursor: pointer;
   background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 
 .c-loader {
