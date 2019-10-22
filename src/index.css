@@ -84,7 +84,7 @@ code {
 .c-weather__details {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -313,7 +313,7 @@ code {
 }
 
 .c-modal {
-  padding: 3rem 2rem;
+  padding: 3rem 3rem;
   position: absolute;
   width: 65rem;
   height: 100vh;
@@ -417,6 +417,12 @@ h1 {
 @media only screen and (max-width: 31.25em) {
   h1 {
     font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .c-modal {
+    width: 100%;
   }
 }
 
