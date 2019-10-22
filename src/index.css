@@ -116,6 +116,23 @@ code {
   color: #999;
 }
 
+.c-weather__details__icon {
+  width: 13rem;
+  height: auto;
+}
+
+@media only screen and (max-width: 31.25em) {
+  .c-weather__details__icon {
+    width: 11rem;
+  }
+}
+
+@media only screen and (max-width: 21.75em) {
+  .c-weather__details__icon {
+    width: 9rem;
+  }
+}
+
 .c-forecast {
   padding: 2rem;
 }
@@ -376,6 +393,34 @@ input {
   background: #ff0000;
 }
 
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 31.25em) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* This is the CSS for the loader */
 .c-loader {
   display: flex;
   justify-content: center;

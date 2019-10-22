@@ -23,7 +23,9 @@ export async function getCurrentLocation() {
   try {
     data = await getLocation(options);
   } catch (err) {
-    alert("issues");
+    alert(
+      "Error fetching current location. Please click on allow in the location popup"
+    );
   }
 
   return data.coords;
